@@ -1,0 +1,181 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{geometry}
+
+% Set up the page geometry
+\geometry{a4paper, margin=1in}
+
+\title{Statistical Distribution}
+\author{Hafidz Mulia \\ NRP 5002221022}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+Statistical distributions are divided into two main categories: discrete and continuous distributions. Each distribution can be characterized by four aspects: the probability mass function (or probability density function), the cumulative distribution function, the mean, and the variance. Below, we will discuss seven common statistical distributions.
+
+\section{Bernoulli Distribution}
+The Bernoulli distribution is a discrete distribution that models a random experiment with two possible outcomes: success (1) and failure (0).
+
+\begin{itemize}
+    \item \textbf{Probability Mass Function (PMF):} 
+    \[
+    f(x) = p^x (1-p)^{1-x}, \quad x \in \{0, 1\}
+    \]
+    \item \textbf{Cumulative Distribution Function (CDF):}
+    \[
+    F(x) = \begin{cases}
+    0 & \text{if } x < 0 \\
+    1-p & \text{if } 0 \leq x < 1 \\
+    1 & \text{if } x \geq 1
+    \end{cases}
+    \]
+    \item \textbf{Mean:} 
+    \[
+    \mu = p
+    \]
+    \item \textbf{Variance:} 
+    \[
+    \sigma^2 = p(1-p)
+    \]
+\end{itemize}
+
+\section{Binomial Distribution}
+The Binomial distribution models the number of successes in a fixed number of independent Bernoulli trials.
+
+\begin{itemize}
+    \item \textbf{PMF:} 
+    \[
+    f(x) = \binom{n}{x} p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n
+    \]
+    \item \textbf{CDF:} 
+    \[
+    F(x) = \sum_{k=0}^{x} \binom{n}{k} p^k (1-p)^{n-k}
+    \]
+    \item \textbf{Mean:} 
+    \[
+    \mu = np
+    \]
+    \item \textbf{Variance:} 
+    \[
+    \sigma^2 = np(1-p)
+    \]
+\end{itemize}
+
+\section{Poisson Distribution}
+The Poisson distribution is a discrete distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space.
+
+\begin{itemize}
+    \item \textbf{PMF:} 
+    \[
+    f(x) = \frac{\lambda^x e^{-\lambda}}{x!}, \quad x = 0, 1, 2, \ldots
+    \]
+    \item \textbf{CDF:} 
+    \[
+    F(x) = e^{-\lambda} \sum_{k=0}^{x} \frac{\lambda^k}{k!}
+    \]
+    \item \textbf{Mean:} 
+    \[
+    \mu = \lambda
+    \]
+    \item \textbf{Variance:} 
+    \[
+    \sigma^2 = \lambda
+    \]
+\end{itemize}
+
+\section{Normal Distribution}
+The Normal distribution is a continuous distribution characterized by its bell-shaped curve.
+
+\begin{itemize}
+    \item \textbf{PDF:} 
+    \[
+    f(x) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+    \]
+    \item \textbf{CDF:} 
+    \[
+    F(x) = \frac{1}{2} \left[ 1 + \text{erf}\left(\frac{x - \mu}{\sigma \sqrt{2}}\right) \right]
+    \]
+    \item \textbf{Mean:} 
+    \[
+    \mu = \mu
+    \]
+    \item \textbf{Variance:} 
+    \[
+    \sigma^2 = \sigma^2
+    \]
+\end{itemize}
+
+\section{Exponential Distribution}
+The Exponential distribution is a continuous distribution that models the time between events in a Poisson process.
+
+\begin{itemize}
+    \item \textbf{PDF:} 
+    \[
+    f(x) = \lambda e^{-\lambda x}, \quad x \geq 0
+    \]
+    \item \textbf{CDF:} 
+    \[
+    F(x) = 1 - e^{-\lambda x}
+    \]
+    \item \textbf{Mean:} 
+    \[
+    \mu = \frac{1}{\lambda}
+    \]
+    \item \textbf{Variance:} 
+    \[
+    \sigma^2 = \frac{1}{\lambda^2}
+    \]
+\end{itemize}
+
+\section{Uniform Distribution}
+The Uniform distribution is a continuous distribution where all outcomes are equally likely.
+
+\begin{itemize}
+    \item \textbf{PDF:} 
+    \[
+    f(x) = \frac{1}{b-a}, \quad a \leq x \leq b
+    \]
+    \item \textbf{CDF:} 
+    \[
+    F(x) = \frac{x-a}{b-a}, \quad a \leq x \leq b
+    \]
+    \item \textbf{Mean:} 
+    \[
+    \mu = \frac{a + b}{2}
+    \]
+    \item \textbf{Variance:} 
+    \[
+    \sigma^2 = \frac{(b - a)^2}{12}
+    \]
+\end{itemize}
+
+\section{Geometric Distribution}
+The Geometric distribution models the number of trials until the first success in a sequence of independent Bernoulli trials.
+
+\begin{itemize}
+    \item \textbf{PMF:} 
+    \[
+    f(x) = p(1-p)^{x-1}, \quad x = 1, 2, \ldots
+    \]
+    \item \textbf{CDF:} 
+    \[
+    F(x) = 1 - (1-p)^{x}
+    \]
+    \item \textbf{Mean:} 
+    \[
+    \mu = \frac{1}{p}
+    \]
+    \item \textbf{Variance:} 
+    \[
+    \sigma^2 = \frac{1-p}{p^2}
+    \]
+\end{itemize}
+
+\section*{Conclusion}
+Understanding these distributions is fundamental in statistics, as they provide the basis for various statistical methods and analyses.
+
+\end{document}
